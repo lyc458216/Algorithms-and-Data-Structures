@@ -17,78 +17,78 @@ Node.property = {
     }
 }
 
-function Tree() {
+function Tree(){
     this.root = null;
 }
 
 Tree.prototype = {
-    insert(data) {
+    insert(data){
         const node = new Node(data, null, null);
-        if(!this.root) {
+        if(!this.root){
             this.root = node;
             return;
         }
         const current = this.root;
         const parent = null;
-        while(current) {
+        while(current){
             parent = current;
-            if(data < parent.data) {
+            if(data < parent.data){
                 current = current.left;
-                if(!current) {
+                if(!current){
                     parent.left = node;
                     return;
                 }
             } else {
                 current = current.right;
-                if(!current) {
+                if(!current){
                     parent.right = node;
                     return;
                 }
             }
         }
     },
-    preOrder(node) {
-        if(node) {
+    preOrder(node){
+        if(node){
             node.show();
             this.preOrder(node.left);
             this.preOrder(node.right);
         }
     },
-    middleOrder(node) {
-        if(node) {
+    middleOrder(node){
+        if(node){
             this.middleOrder(node.left);
             node.show();
             this.middleOrder(node.right);
         }
     },
-    laterOrder(node) {
+    laterOrder(node){
         if(node) {
             this.laterOrder(node.left);
             this.laterOrder(node.right);
             node.show()
         }
     },
-    getMin() {
+    getMin(){
         const current = this.root;
-        while(current) {
-            if(!current.left) {
+        while(current){
+            if(!current.left){
                 return current;
             }
             current = current.left;
         }
     },
-    getMax() {
+    getMax(){
         const current = this.root;
-        while(current) {
-            if(!current.right) {
+        while(current){
+            if(!current.right){
                 return current;
             }
             current = current.right;
         }
     },
-    getDeep(node, deep) {
+    getDeep(node, deep){
         deep = deep || 0;
-        if(node == null) {
+        if(node == null){
             return deep
         };
         deep++;
