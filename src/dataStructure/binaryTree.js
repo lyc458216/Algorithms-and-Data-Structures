@@ -92,9 +92,23 @@ Tree.prototype = {
             return deep
         };
         deep++;
-        const dLeft = this.getDeep(ndoe.left, deep);
+        const dLeft = this.getDeep(node.left, deep);
         const dRight = this.getDeep(node.right, deep);
         return Math.max(dLeft, dRight);
+    },
+    // 查找树
+    getNode(data, node){
+        if(node){
+            if(data === node.data){
+                return node;
+            } else if (data < node.data){
+                return this.getNode(data, node.left);
+            } else {
+                return this.getNode(data, node.right);
+            }
+        } else {
+            return null
+        }
     }
 }
 // ex:
@@ -109,3 +123,11 @@ t.insert(7);
 t.insert(6);
 t.insert(0);
 console.log(t);
+
+t.preOrder(t.root);
+t.middleOrder(t.root);
+t.laterOrder(t.root);
+
+console.log(t.getMax(), t.getMin());
+console.log(t.getDeep(t.root, 0));
+console.log(t.getDeep)
