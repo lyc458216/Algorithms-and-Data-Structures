@@ -11,7 +11,7 @@ function Node(data,left,right){
     this.right = right;
 }
 
-Node.property = {
+Node.prototype = {
     show(){
         console.log(this.data)
     }
@@ -28,8 +28,8 @@ Tree.prototype = {
             this.root = node;
             return;
         }
-        const current = this.root;
-        const parent = null;
+        let current = this.root;
+        let parent = null;
         while(current){
             parent = current;
             if(data < parent.data){
@@ -69,7 +69,7 @@ Tree.prototype = {
         }
     },
     getMin(){
-        const current = this.root;
+        let current = this.root;
         while(current){
             if(!current.left){
                 return current;
@@ -78,7 +78,7 @@ Tree.prototype = {
         }
     },
     getMax(){
-        const current = this.root;
+        let current = this.root;
         while(current){
             if(!current.right){
                 return current;
@@ -130,4 +130,3 @@ t.laterOrder(t.root);
 
 console.log(t.getMax(), t.getMin());
 console.log(t.getDeep(t.root, 0));
-console.log(t.getDeep)
