@@ -109,7 +109,24 @@ Tree.prototype = {
         } else {
             return null
         }
+    },
+    // 结点查找借鉴了二分查找（下面是二分查找举例，与二叉树无关）
+    binarySearch(data, arr, start, end){
+        if(start > end){
+            return -1;
+        }
+        const mid = Math.floor((start + end) / 2);
+        if(data === arr[mid]){
+            return mid;
+        } else if (data < arr[mid]){
+            return this.binarySearch(data, arr, start, mid -1);
+        } else {
+            return this.binarySearch(data, arr, mid + 1, end);
+        }
     }
+    // ex:
+    // const arr = [0, 1, 1, 1, 1, 1, 4, 6, 7, 8]
+    // console.log(binarySearch(1, arr, 0, arr.length - 1));
 }
 // ex:
 const t = new Tree();
