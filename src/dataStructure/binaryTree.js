@@ -148,7 +148,11 @@ console.log(t);
 //                 left: null,
 //                 right: {
 //                     data: 7,
-//                     left: null,
+//                     left: {
+//                         data: 6,
+//                         left: null,
+//                         right: null,
+//                     },
 //                     right: null
 //                 }
 //             },
