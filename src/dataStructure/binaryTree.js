@@ -123,6 +123,39 @@ t.insert(7);
 t.insert(6);
 t.insert(0);
 console.log(t);
+// t = {
+//     data: 3,
+//     left: {
+//         data: 1,
+//         left: {
+//             data: 0,
+//             left: null,
+//             right: null
+//         },
+//         right:{
+//             data: 2,
+//             left: null,
+//             right: null
+//         }
+//     },
+//     right: {
+//         data: 3,
+//         left: null,
+//         right: {
+//             data: 8,
+//             left: {
+//                 data: 5,
+//                 left: null,
+//                 right: {
+//                     data: 7,
+//                     left: null,
+//                     right: null
+//                 }
+//             },
+//             right: null
+//         }
+//     },
+// }
 
 t.preOrder(t.root);
 t.middleOrder(t.root);
