@@ -171,3 +171,4 @@ console.log(t.getMin());
 // Node {data: 0, left: null, right: null}
 
 console.log(t.getDeep(t.root, 0));  // 6
+console.log(t.getNode(5, t.root));  // Node {data: 5, left: null, right: Node}
