@@ -88,7 +88,7 @@ Tree.prototype = {
     },
     getDeep(node, deep){
         deep = deep || 0;
-        if(node == null){
+        if(node === null){
             return deep
         };
         deep++;
@@ -161,7 +161,9 @@ t.preOrder(t.root); // 310238576
 t.middleOrder(t.root);  // 012335678
 t.laterOrder(t.root);    // 021675833
 
-console.log(t.getMax(), t.getMin());
-// Node {data: 8, left: Node, right: null} Node {data: 0, left: null, right: null}
+console.log(t.getMax());
+// Node {data: 8, left: Node, right: null} 
+console.log(t.getMin());
+// Node {data: 0, left: null, right: null}
 
 console.log(t.getDeep(t.root, 0));  // 6
